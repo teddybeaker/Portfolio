@@ -1,29 +1,30 @@
-Portfolio
-=========
+# Portfolio
 Portfolio page of xinteractionx
 
-Dependencies
-============
+# Dependencies
 [1140 CSS Grid](http://cssgrid.net/)
 
+# TODOs
 
-TODOs
-=====
-Add Parallax effect
--------------------
+## Add Parallax effect
 * [jparallax](http://stephband.info/jparallax/)
 * [stellar.js](http://markdalgleish.com/projects/stellar.js/)
   * [Tutorial](http://webdesign.tutsplus.com/tutorials/complete-websites/create-a-parallax-scrolling-website-using-stellar-js) looks pretty similar to what we want 
 
-[Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
--------------------------------------------------------------------
+## [Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
 
-Gallery
--------
+## Portfolio
+### Gallerie
 [galleria.io](http://galleria.io/)
 
-Wordpress
----------
+### Behance
+[REST API Documentation](http://www.behance.net/dev/api/endpoints/2#users-get-1)
+[Libraries](http://www.behance.net/dev/api/libraries)
+
+### Showcases
+[Martin Oberhäuser](http://www.oberhaeuser.info)
+
+## Wordpress
 * 1140 used in other templates as well, e.g. [1140 Fluid Starkers WordPress Theme](http://www.thedotmack.com/2011/07/19/1140-fluid-starkers-wordpress-theme)
 * decide whether to work with pages or posts (from what makes sense in regard to information structure)
   * assume pages:
@@ -34,7 +35,6 @@ Wordpress
 
   * assume posts: make categories for home/work/who
 
-Other
-=====
-[Markdown CheatSheet](http://warpedvisions.org/projects/markdown-cheat-sheet/)
+# Other
+[Markdown CheatSheet](http://warpedvisions.org/projects/markdown-cheat-sheet/)  
 [Markdown CheatSheet](https://en.wikipedia.org/wiki/Markdown)
