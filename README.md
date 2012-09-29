@@ -9,7 +9,10 @@ Portfolio page of xinteractionx
 ## Add Parallax effect
 * [jparallax](http://stephband.info/jparallax/)
 * [stellar.js](http://markdalgleish.com/projects/stellar.js/)
-  * [Tutorial](http://webdesign.tutsplus.com/tutorials/complete-websites/create-a-parallax-scrolling-website-using-stellar-js) looks pretty similar to what we want 
+  * [Tutorial](http://webdesign.tutsplus.com/tutorials/complete-websites/create-a-parallax-scrolling-website-using-stellar-js) looks pretty similar to what we want
+  * could interfere with css3-mediaqueries.js (did when I tried to adapt the sample to 1140)
+  * [One Page Websites tagged with: Parallax Scrolling](http://onepagelove.com/tag/parallax-scrolling)
+  * Found only one example that is responsive as well: http://www.duluthtrading.com/site/components/last-pants-standing -> consider disabling effect with media queries
 
 ## [Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
 
