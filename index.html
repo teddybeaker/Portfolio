@@ -18,6 +18,20 @@
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+
+	<!--Responsive Measure Javascript file-->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.rm.js"></script>
+	<script type="text/javascript">
+	
+	$('home').responsiveMeasure({
+	// Variables you can pass in:
+	idealLineLength: (defaults to 50),
+	minimumFontSize: (defaults to 16),
+	maximumFontSize: (defaults to 300),
+	ratio: (defaults to 4/3)
+	});
+	</script>
 	
 </head>
 
@@ -25,7 +39,7 @@
 	<div id="mainnav" class="fixedwrapper">
 		<div class="container">
 			<header class="row">
-				<div class="twocol logo">
+				<div class="logo twocol">
 					<a href="#home">
 						<span class="logobig">ANDREAS</span><br>FREY
 						<span class="logored">SANG</span>
@@ -33,7 +47,7 @@
 				</div>
 				<nav class="tencol last">
 					<ul>
-						<li><a href="#work">WORK<span class="selected">!</span></a></li>
+						<li><a href="#work">WORK<span>!</span></a></li>
 						<li><a href="#words">WORDS<span>:</span></a></li>
 						<li><a href="#who">WHO<span>?</span></a></li>
 					</ul>
@@ -49,7 +63,7 @@
 			<p>Hi there, and welcome to my personal portfolio page. It’s lovely to have another visitor over here!</p>
 			<p>My name is Andreas Frey Sang and I’m a young Interaction Designer based in Bern, Switzerland.</p> 
 			<p> 
-			I don’t wanna bore you so have a look/scroll around and send me a <a href="mailto:freysang@gmail.com">message</a> if you want to.</p> 
+			I don’t wanna bore you so have a look/scroll around and send me a <a href="mailto:freysang@gmail.com" target="blank">message</a> if you want to.</p> 
 		</section>
 	</div>
 
@@ -58,10 +72,10 @@
 	<div id="work" class="container work">
 		<nav id="worknav" class="row">
 			<ul class="twelvecol">
-				<li><img src="images/test_image_worknav.png"></li>
-				<li><img src="images/test_image_worknav.png"></li>
-				<li><img src="images/test_image_worknav.png"></li>
-				<li><img src="images/test_image_worknav.png"></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
 
 			</ul>
 			<hr class="line"/>
@@ -84,6 +98,7 @@
 		        	<img src="images/test_image_worknav.png" data-title="project 5" data-description="This is a sample screenshot">
 		        </a>
 		    </div>
+			<div class="ninecol images"></div>
 			<div class="threecol last">
 				<h1>VLP-ASPAN<br>WEBSITE</h1>
 				<h2>DESIGN &amp; CONCEPT-COLLABORATION</h2>
@@ -108,8 +123,9 @@
 			<div>
 				<p>This is my personal portfolio page. My name is Andreas Frey Sang and I am a 22 year old Interaction Designer from Bern, Switzerland.</p>
 				<p>I am currently studying Interaction Design at the School of Design in Bern and working at MediaparX AG in Bern.</p>
-				<p>I have a great passion for Interaction Design – this job is more than just pixel pushing and vector beziers – yeah i really sweat blood during projects. We humans are constantly interacting in so many aspects of our life. It’s up to us designers to create Interactive Experiences which are adequete to their application.</p> 
-				<p>For more Information about me send me an E-Mail or contact me via Facebook, Xing, LinkedIn or Twitter. I would love to hear from you!</p> 
+				<p>I have a great passion for <a href="http://en.wikipedia.org/wiki/Interaction_design" target="blank">Interaction Design</a> – this job is more than just pixel pushing and vector beziers – yeah i really sweat blood during projects. 
+				<p>We humans are constantly interacting in so many aspects of our life. It’s up to us designers to create Interactive Experiences which are adequete to their application.</p> 
+				<p>For more Information about me send me an <a href="mailto:freysang@gmail.com" target="blank">E-Mail</a> or contact me via <a href="http://www.facebook.com/solothurn" target="_blank">Facebook</a>, <a href="https://www.xing.com/profile/Andreas_FreySang" target="_blank">Xing</a>, <a href="http://www.linkedin.com/pub/andreas-frey-sang/33/b15/82" target="blank">LinkedIn</a> or follow me on <a href="https://twitter.com/xinteractionx" target="blank">Twitter</a>. I would love to hear from you!</p> 
 
 			</div>
 		</section>
@@ -121,7 +137,7 @@
 <div id="footer" class="fixedfooter">
 	<div class="container">
 		<footer class="row">
-			<span>© COPYRIGHT 2012 | ANDREAS FREY SANG</span> 		
+			<span>&copy; COPYRIGHT 2012 | ANDREAS FREY SANG</span> 		
 			<a class="floatright" href="#homeid">Top</a>
 		</footer>
 	</div>
