@@ -21,7 +21,7 @@
 
   function calculateIdealLineLength() {
     //  Set to Bringhurst's recommendation for an ideal measure
-    return 50;
+    return 66;
   }
 
   function fontSizeForIdealLineLength($element, sampleText, maximumFontSize) {

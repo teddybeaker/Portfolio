@@ -19,23 +19,18 @@
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 
-	<!--Responsive Measure Javascript file-->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.rm.js"></script>
-	<script type="text/javascript">
-	
-	$('home').responsiveMeasure({
-	// Variables you can pass in:
-	idealLineLength: (defaults to 50),
-	minimumFontSize: (defaults to 16),
-	maximumFontSize: (defaults to 300),
-	ratio: (defaults to 4/3)
-	});
-	</script>
-	
+
+
+
+
 </head>
 
 <body>
+
+
+
+
+
 	<div id="mainnav" class="fixedwrapper">
 		<div class="container">
 			<header class="row">
@@ -58,8 +53,34 @@
 
 
 
+	<!--Responsive Measure Javascript file-->
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="js/jquery.rm.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+
+
+	$('#armone').responsiveMeasure({
+	idealLineLength: 48,
+	minimumFontSize: 18,
+	maximumFontSize: 300,
+	ratio: 4/3
+	});
+
+
+
+
+	});
+
+	</script>
+
+
+
+
+
 	<div id="home" class="container topmargin">
-		<section class="row">
+		<section id="armone" class="row">
 			<p>Hi there, and welcome to my personal portfolio page. It’s lovely to have another visitor over here!</p>
 			<p>My name is Andreas Frey Sang and I’m a young Interaction Designer based in Bern, Switzerland.</p> 
 			<p> 
@@ -105,6 +126,12 @@
 				<hr class="line"/>
 				<p>Website designed for the «Swiss Union of Spatial Planning». Collaboration with conception of certain features: for example landingpage and filtering functions.</p>
 				<h6>This work was done under employment by MediaparX AG</h6>
+				<div id="armtwo" class="threecol last">
+					<h1>VLP-ASPAN<br>WEBSITE</h1>
+					<h2>DESIGN &amp; CONCEPT-COLLABORATION</h2>
+					<hr class="line"/>
+					<p>Website designed for the «Swiss Union of Spatial Planning». Collaboration with conception of certain features: for example landingpage and filtering functions.</p>
+					<h6>This work was done under employment by MediaparX AG</h6>
 			</div>
 		</section>
 	</div>
@@ -120,7 +147,7 @@
 
 	<div id="who" class="container">
 		<section class="row">
-			<div>
+			<div id="armone">
 				<p>This is my personal portfolio page. My name is Andreas Frey Sang and I am a 22 year old Interaction Designer from Bern, Switzerland.</p>
 				<p>I am currently studying Interaction Design at the School of Design in Bern and working at MediaparX AG in Bern.</p>
 				<p>I have a great passion for <a href="http://en.wikipedia.org/wiki/Interaction_design" target="blank">Interaction Design</a> – this job is more than just pixel pushing and vector beziers – yeah i really sweat blood during projects. 
@@ -142,8 +169,6 @@
 		</footer>
 	</div>
 </div>
-
-
 
 
 </body>
