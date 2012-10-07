@@ -3,6 +3,7 @@ Portfolio page of xinteractionx
 
 # Dependencies
 [1140 CSS Grid](http://cssgrid.net/)
+[Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
 
 # TODOs
 
@@ -13,8 +14,6 @@ Portfolio page of xinteractionx
   * could interfere with css3-mediaqueries.js (did when I tried to adapt the sample to 1140)
   * [One Page Websites tagged with: Parallax Scrolling](http://onepagelove.com/tag/parallax-scrolling)
   * Found only one example that is responsive as well: http://www.duluthtrading.com/site/components/last-pants-standing -> consider disabling effect with media queries
-
-## [Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
 
 ## Portfolio
 ### Gallerie

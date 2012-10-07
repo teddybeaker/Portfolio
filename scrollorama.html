@@ -15,6 +15,8 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<!-- apply styling that we removed because of responsive measure -->
+	<link rel="stylesheet" href="css/font.css" type="text/css" media="screen" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
@@ -22,29 +24,8 @@
 </head>
 <body>
 
-	<div id="mainnav" class="fixedwrapper">
-		<div class="container">
-			<header class="row">
-				<div class="logo twocol">
-					<a href="#home">
-						<span class="logobig">ANDREAS</span><br>FREY
-						<span class="logored">SANG</span>
-					</a>
-				</div>
-				<nav class="tencol last">
-					<ul>
-						<li><a href="#work">WORK<span>!</span></a></li>
-						<li><a href="#words">WORDS<span>:</span></a></li>
-						<li><a href="#who">WHO<span>?</span></a></li>
-					</ul>
-				</nav>
-			</header>
-		</div>
-	</div>
-
-
 	<div id="home" class="container topmargin">
-		<section id="armone" class="row">
+		<section class="row">
 			<p>Hi there, and welcome to my personal portfolio page. It’s lovely to have another visitor over here!</p>
 			<p>My name is Andreas Frey Sang and I’m a young Interaction Designer based in Bern, Switzerland.</p> 
 			<p> 
@@ -66,7 +47,7 @@
 		</nav>
 		<section class="row">
 			<div class="ninecol images">&nbsp;</div>
-			<div id="armtwo" class="threecol last">
+			<div class="threecol last">
 				<h1>VLP-ASPAN<br>WEBSITE</h1>
 				<h2>DESIGN &amp; CONCEPT-COLLABORATION</h2>
 				<hr class="line"/>
@@ -79,7 +60,7 @@
 
 	<div id="who" class="container">
 		<section class="row">
-			<div id="armone">
+			<div>
 				<p>This is my personal portfolio page. My name is Andreas Frey Sang and I am a 22 year old Interaction Designer from Bern, Switzerland.</p>
 				<p>I am currently studying Interaction Design at the School of Design in Bern and working at MediaparX AG in Bern.</p>
 				<p>I have a great passion for <a href="http://en.wikipedia.org/wiki/Interaction_design" target="blank">Interaction Design</a> – this job is more than just pixel pushing and vector beziers – yeah i really sweat blood during projects. 
@@ -91,26 +72,20 @@
 	</div>
 
 
-	<div id="footer" class="fixedfooter">
-		<div class="container">
-			<footer class="row">
-				<span>&copy; COPYRIGHT 2012 | ANDREAS FREY SANG</span> 		
-				<a class="floatright" href="#homeid">Top</a>
-			</footer>
-		</div>
-	</div>
-
-	<!--Responsive Measure Javascript file-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-	<script src="js/jquery.rm.js"></script>
-	<script type="text/javascript">
+	<script src="http://johnpolacek.github.com/scrollorama/js/jquery-1.7.1.min.js"></script>
+	<script src="http://johnpolacek.github.com/scrollorama/js/jquery.lettering-0.6.1.min.js"></script>
+	<script src="http://johnpolacek.github.com/scrollorama/js/jquery.scrollorama.js"></script>
+	<script>
 		$(document).ready(function() {
-			$('#armone').responsiveMeasure({
-			idealLineLength: 48,
-			minimumFontSize: 18,
-			maximumFontSize: 300,
-			ratio: 4/3
-			});
+			
+			// initialize the plugin, pass in the class selector for the sections of content (blocks)
+			var scrollorama = $.scrollorama({ blocks:'.container' });
+			
+			// animate the parallaxing
+			scrollorama.animate('#home .row',{ delay: 400, duration: 600, property:'top', start:800, end:-800 });
+			scrollorama.animate('#work .row',{ delay: 200, duration: 1200, property:'top', start:500, end:-500 });
+			scrollorama.animate('#who .row',{ delay: 200, duration: 1200, property:'top', start:500, end:-500 });
+			
 		});
 	</script>
 </body>

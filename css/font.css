@@ -1,0 +1,55 @@
+body {
+	font-size: 100%;
+}
+
+section {
+	font-size: 56px;
+	line-height: 65px;
+}
+
+footer {
+	font-size: 18px;
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 32px;
+}
+
+h2 {
+	font-size: 26px;
+	line-height: 28px;
+}
+
+h6 {
+	font-size: 28px;
+	line-height: 24px;
+}
+
+p {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+#home p, #who p {
+	font-size: 56px;
+	line-height: 65px;
+}
+
+
+@media handheld, only screen and (max-width: 767px) {
+
+	nav ul {
+		padding-top: 20px;
+		text-align: right;
+	}
+
+	nav li {
+	font-size: 18px;
+	line-height: 26px;
+	padding-left: 10px;
+	display: inline-block;
+
+	}
+
+}
