@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -15,36 +15,30 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/behance.css" type="text/css" media="screen" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 
 
 	<!--Responsive Measure Javascript file-->
-	<script src="js/jquery.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script src="js/jquery.rm.js"></script>
 	<script type="text/javascript">
 	
-		$(document).ready(function() {
-			$('.armone').responsiveMeasure({
-				idealLineLength: 48,
-				minimumFontSize: 18,
-				maximumFontSize: 300,
-				ratio: 4/3
-			});
-		});
+
 
 	</script>
-	<script type="text/javascript" src="js/jquery.tinycarousel.min.js"></script>
-  	<script type="text/javascript" src="js/underscore.js"></script>
-  	<script type="text/javascript" src="js/backbone.js"></script>
-  	<script type="text/javascript" src="js/galleria/galleria-1.2.8.min.js"></script>
-  	<script type="text/javascript" src="js/behance.js"></script>
+
+
 
 
 </head>
-<body>
+
+<body class="responsiveMeasure">
+
+
+
+
 
 	<div id="mainnav" class="fixedwrapper">
 		<div class="container">
@@ -69,6 +63,7 @@
 	</div>
 
 
+
 	<div id="home" class="container topmargin">
 		<section class="row">
 			<div class="twelvecol armone">
@@ -81,51 +76,30 @@
 	</div>
 
 
+
 	<div id="work" class="container work">
 		<nav id="worknav" class="row">
-			<div class="twelvecol last">
-			    <a class="buttons prev" href="#">left</a>
-			    <div class="viewport">
-			    	<ul class="overview">
-			    		<li>loading</li>
-					<script type="text/template" id="tplNavListItem">
-						<li data-id="<%=id %>">
-							<a href="#works/<%=id%>">
-								<img src="<%=cover%>" alt="<%=name%>"/>
-							</a>
-						</li>
-					</script>
-			    	</ul>
-				</div>
-			    <a class="buttons next" href="#">right</a>
-		    	<ul class="pager">
-		    		<li>loading</li>
-					<script type="text/template" id="tplNavPagerItem">
-			        	<li>
-			        		<a rel="<%= index %>" class="pagenum" href="#"></a>
-			        	</li>
-			       </script>
-		    	</ul>
-			</div>
+			<ul class="twelvecol">
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+				<li><img src="images/test_image_worknav.png"/></li>
+
+			</ul>
+			<hr class="line"/>
 		</nav>
-		<section id="stage" class="row">
-			<script type="text/template" id="tplStage">
-				<div id="galleria" class="ninecol images">
-					<% for(var i in images) { %>
-						<a href="<%= images[i].original %>">
-				           <img src="<%= images[i].thumb %>" data-description="<%= images[i].caption %>" alt="<%= images[i].caption %>"/>
-						</a>
-					<% } %>
-				</div>
+		<section class="row">
+			<div class="ninecol images"></div>
 				<div class="threecol last">
-					<h1><%= name %></h1>
-					<h2><%= description %></h2>
-			        <hr class="line"/>
-					<p><%= longDescription %></p>
-				</div>
-			</script>
+					<h1>VLP-ASPAN<br>WEBSITE</h1>
+					<h2>DESIGN &amp; CONCEPT-COLLABORATION</h2>
+					<hr class="line"/>
+					<p>Website designed for the «Swiss Union of Spatial Planning». Collaboration with conception of certain features: for example landingpage and filtering functions.</p>
+					<h6>This work was done under employment by MediaparX AG</h6>
+			</div>
 		</section>
 	</div>
+
 
 
 	<div id="who" class="container">
@@ -156,6 +130,24 @@
 	</div>
 </div>
 
+<script>
+	$('.responsiveMeasure').each(function(){
+		var element = $(this);
+		var baseSize = Number(String(element.css('font-size')).replace('px', ''));
+		var factor = 3000;
+
+		console.info(baseSize);
+		
+		void new (function(){
+			console.debug(element);
+				console.debug(($('body').width()/factor*baseSize)+'px');
+				element.css({'font-size': ($('body').width()/factor*baseSize)+'px'});
+
+		})();
+	});
+</script>
+
 
 </body>
+
 </html>

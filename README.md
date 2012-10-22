@@ -3,12 +3,18 @@ Portfolio page of xinteractionx
 
 # Dependencies
 [1140 CSS Grid](http://cssgrid.net/)
+[jQuery](http://jquery.com)
 [Responsive Measure](http://jbrewer.github.com/Responsive-Measure/)
+[galleria.io](http://galleria.io/)
+[tinycarousel](http://baijs.nl/tinycarousel/)
+[backbone.js](http://backbonejs.org)
+[underscorejs](http://underscorejs.org)
 
 # TODOs
 
 ## Add Parallax effect
 * [jparallax](http://stephband.info/jparallax/)
+* [curtain](http://editsquarterly.com/)
 * [stellar.js](http://markdalgleish.com/projects/stellar.js/)
   * [Tutorial](http://webdesign.tutsplus.com/tutorials/complete-websites/create-a-parallax-scrolling-website-using-stellar-js) looks pretty similar to what we want
   * could interfere with css3-mediaqueries.js (did when I tried to adapt the sample to 1140)
@@ -16,12 +22,7 @@ Portfolio page of xinteractionx
   * Found only one example that is responsive as well: http://www.duluthtrading.com/site/components/last-pants-standing -> consider disabling effect with media queries
 
 ## Portfolio
-### Gallerie
-[galleria.io](http://galleria.io/)
-
-### Behance
-[REST API Documentation](http://www.behance.net/dev/api/endpoints/2#users-get-1)
-[Libraries](http://www.behance.net/dev/api/libraries)
+* add Behance update script
 
 ### Showcases
 [Martin Oberhäuser](http://www.oberhaeuser.info)

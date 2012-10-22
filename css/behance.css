@@ -1,0 +1,122 @@
+#worknav {
+	height: 211px;
+	overflow:hidden;
+	background-color: #dcdcdc;
+}
+#worknav .viewport {
+	float: left;
+		/* n*(li+padding) + (n-1)*margin
+	 * 1 => 260
+	 * 2 => 540
+	 * 3 => 820
+	 */
+	width: 261px;
+	height: 188px;
+	overflow: hidden;
+	position: relative;
+}
+#worknav .buttons {
+	display: block;
+	margin: 30px 10px 0 0;
+	float: left;
+}
+#worknav .next {
+	margin: 30px 0 0 10px; 
+}
+#worknav .disable {
+	visibility: hidden;
+}
+#worknav .overview {
+	list-style: none;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+}
+#worknav .overview li {
+	float: left;
+	margin: 0 20px 0 0;
+	height: 187px;
+	border: 1px solid #dcdcdc;
+	width: 260px;
+}
+#worknav .overview li img {
+	width: 254px;
+	height: 181px;
+}
+
+#worknav .overview li.selected img {
+	border: 3px solid black;
+}
+
+#worknav .overview li a {
+	display: block;
+	height: 100%;
+}
+
+/**
+ * 	Pager
+ */
+#worknav .pager {
+	overflow:hidden;
+	list-style: none;
+	clear: both;
+	margin-left: 100px;
+}
+#worknav .pager li {
+	display: inline-block;
+}
+#worknav .pagenum {
+	background-color: red;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	display: block;
+}
+
+#worknav .active {
+	background-color:  black;
+}
+
+#stage {
+	margin-top: 20px;
+	min-height: 400px;
+	background-color: #dcdcdc;
+}
+
+#stage h2 {
+	text-transform: uppercase;
+}
+
+/* ======================================= */
+/* overwrite some settings for galleria.io */
+/* ======================================= */
+
+#galleria {
+	min-height: 400px;
+}
+
+.galleria-container {
+	background-color: inherit;
+}
+
+/* remove margin */
+#work section div {
+	margin-top: auto;
+}
+
+.images {
+	background-color: inherit;
+}
+
+/* so you can see the controls  (: */
+.galleria-image-nav-right, .galleria-image-nav-left {
+	background-color: #FF2828;
+}
+
+/* align thumbs in center */
+.galleria-thumbnails {
+	margin-left: auto;
+	margin-right: auto;
+}
