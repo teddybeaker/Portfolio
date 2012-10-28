@@ -1,92 +1,100 @@
-#worknav {
-	height: 211px;
-	overflow:hidden;
-	background-color: #dcdcdc;
-}
-#worknav .viewport {
-	float: left;
-		/* n*(li+padding) + (n-1)*margin
+/**
+ * 	Basic styles of behance application for 1140 width.
+ */
+
+/* ================ */
+/* style navigation */
+/* ================ */
+nav .viewport {
+	float: left; /* float in line with buttons */
+	height: 188px;
+	/* calculate width based on how many images (n) should be displayed next to
+	 * each other
+	 * n*(li+padding) + (n-1)*margin
 	 * 1 => 260
 	 * 2 => 540
 	 * 3 => 820
 	 */
-	width: 261px;
-	height: 188px;
+	width: 1050px;
 	overflow: hidden;
 	position: relative;
 }
-#worknav .buttons {
-	display: block;
-	margin: 30px 10px 0 0;
-	float: left;
-}
-#worknav .next {
-	margin: 30px 0 0 10px; 
-}
-#worknav .disable {
-	visibility: hidden;
-}
-#worknav .overview {
-	list-style: none;
+
+nav .overview {
 	position: absolute;
-	padding: 0;
-	margin: 0;
-	left: 0;
-	top: 0;
+	/*needed if not already set in reset
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	*/
+	/*imo not neede since set by js, add again if something breaks
+		left: 0;
+		top: 0;
+	*/
 }
-#worknav .overview li {
-	float: left;
-	margin: 0 20px 0 0;
-	height: 187px;
+nav .overview li {
+	float: left; /* display elements inline */
+	margin: 0 5px 0 0; /* add some spacing between li's*/
 	border: 1px solid #dcdcdc;
+	/* calculate height and width from image size, adding 2x border width of
+ 	* selected elements */
+	height: 187px;
 	width: 260px;
 }
-#worknav .overview li img {
-	width: 254px;
+nav .overview li img {
 	height: 181px;
+	width: 254px;
 }
 
-#worknav .overview li.selected img {
+nav .overview li.selected img {
 	border: 3px solid black;
 }
 
-#worknav .overview li a {
-	display: block;
-	height: 100%;
+/**
+ * left-right buttons
+ */
+nav .buttons {
+	/* vertical align buttons on center of viewport: (viewport-height-45) /2 */
+	margin-top: 71px;
+	float: left; /* float in line with viewport */
+}
+nav .prev img {
+	/* make button point left */
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Safari and Chrome */
+	-o-transform: rotate(180deg); /* Opera */
+	-moz-transform: rotate(180deg); /* Firefox */
+}
+nav .disable {
+	visibility: hidden; /* hides buttons when no navigation in that direction is possible */
 }
 
 /**
- * 	Pager
+ * 	pager
  */
-#worknav .pager {
+nav .pager {
 	overflow:hidden;
-	list-style: none;
-	clear: both;
-	margin-left: 100px;
+	/*needed if not already set in reset
+		list-style: none;
+ 	*/
+	clear: both; /* exit floating from .overview/buttons */
+	margin-left: 527px; /* (viewport width + button - n*.pagenum) / 2 */
 }
-#worknav .pager li {
+nav .pager li {
 	display: inline-block;
 }
-#worknav .pagenum {
-	background-color: red;
-	width: 20px;
-	height: 20px;
-	border-radius: 20px;
+/* render link as clickable circles */
+nav .pagenum {
 	display: block;
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	background-color: red;
 }
 
-#worknav .active {
+nav .active {
 	background-color:  black;
-}
-
-#stage {
-	margin-top: 20px;
-	min-height: 400px;
-	background-color: #dcdcdc;
-}
-
-#stage h2 {
-	text-transform: uppercase;
 }
 
 /* ======================================= */
@@ -119,4 +127,33 @@
 .galleria-thumbnails {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/**
+ * 	smoke test on how to resize navigation for smaller pages. This only documents
+ *  which values must be reset and does not claim to use sensible ones.
+ */
+@media handheld, only screen and (max-width: 767px) {
+	nav .viewport {
+		height: 97px;
+		/* calculate width based on how many images (n) should be displayed next to
+		 * each other
+		 * n*(li+padding) + (n-1)*margin
+		 * 1 => 133
+		 * 2 => 271
+		 * 3 => 409
+		 */
+		width: 523px;
+	}
+	nav .overview li {
+	   /* calculate height and width from image size, adding 2x border width of
+	 	* selected elements */
+		height: 96px;
+		width: 133px;
+	}
+	
+	nav .overview li img {
+		height: 90px;
+		width: 127px;
+	}
 }

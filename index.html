@@ -15,13 +15,14 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/behance.css" type="text/css" media="screen" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
+	<script type="text/javascript" src="js/jquery.js"></script>
+	
 	<!--Responsive Measure Javascript file-->
 	<script src="js/jquery.rm.js"></script>
 	<script type="text/javascript">
@@ -107,24 +108,53 @@
 
 	<div id="work" class="container work">
 		<nav id="worknav" class="row">
-			<ul class="twelvecol">
-				<li><img src="images/test_image_worknav.png"/></li>
-				<li><img src="images/test_image_worknav.png"/></li>
-				<li><img src="images/test_image_worknav.png"/></li>
-				<li><img src="images/test_image_worknav.png"/></li>
-
-			</ul>
-			<hr class="line"/>
-		</nav>
-		<section class="row">
-			<div class="ninecol images"></div>
-			<div class="threecol last">
-				<h1>VLP-ASPAN WEBSITE</h1>
-				<h2>DESIGN &amp; CONCEPT-COLLABORATION</h2>
-				<hr class="line"/>
-				<p>Website designed for the «Swiss Union of Spatial Planning». Collaboration with conception of certain features: for example landingpage and filtering functions.</p>
-				<h6>This work was done under employment by MediaparX AG</h6>
+			<div class="twelvecol last">
+			    <a class="buttons prev" href="#">
+			    	<img src="images/lebutton.svg" alt="left" />
+			    </a>
+			    <div class="viewport">
+			    	<ul class="overview">
+			    		<li>loading</li>
+			    	</ul>
+					<script type="text/template" id="tplNavListItem">
+						<li data-id="<%=id %>">
+							<a href="#works/<%=id%>">
+								<img src="<%=cover%>" alt="<%=name%>"/>
+							</a>
+						</li>
+					</script>
+				</div>
+			    <a class="buttons next" href="#">
+			    	<img src="images/lebutton.svg" alt="right" />
+			    </a>
+		    	<ul class="pager">
+		    		<li>loading</li>
+		    	</ul>
+				<script type="text/template" id="tplNavPagerItem">
+		        	<li>
+		        		<a rel="<%= index %>" class="pagenum" href="#"></a>
+		        	</li>
+		       </script>
 			</div>
+		</nav>
+		<section id="stage" class="row">
+			<script type="text/template" id="tplStage">
+				<div class="ninecol images">
+					<div id="galleria" >
+					<% for(var i in images) { %>
+						<a href="<%= images[i].original %>">
+				           <img src="<%= images[i].thumb %>" data-description="<%= images[i].caption %>" alt="<%= images[i].caption %>"/>
+						</a>
+					<% } %>
+					</div>
+				</div>
+				<div class="threecol last">
+					<h1><%= name %></h1>
+					<h2><%= byline %></h2>
+			        <hr class="line"/>
+					<p><%= longDescription %></p>
+				</div>
+			</script>
 		</section>
 	</div>
 
@@ -156,6 +186,20 @@
 		</div>
 	</div>
 
+	<script type="text/javascript" src="js/jquery.tinycarousel.min.js"></script>
+	<script type="text/javascript" src="js/underscore.js"></script>
+	<script type="text/javascript" src="js/backbone.js"></script>
+	<script type="text/javascript" src="js/galleria/galleria-1.2.8.min.js"></script>
+	<!-- important that included after all the markup, otherwise views won't work -->
+	<script type="text/javascript" src="js/behance.js"></script>
+	<script type="text/javascript">
+		
+		Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+		$(document).ready(function() {    
+	    	BEHANCEAPP.init();
+		});
+		
+	</script>
 
 </body>
 

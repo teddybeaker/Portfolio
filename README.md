@@ -49,6 +49,20 @@ emailed to you.
 
 # TODOs
 
+## Behance Application
+The styling done so far is very limited to nonexistant.
+
+### Navigation
+* works for 1140px or wider, but needs adaption for smaller screens. See the 
+ 	media query at the end of behance.css for a styling sample to make the 
+ 	navigation half the size.
+* make sure previous/next buttons stay next to viewport and don't flow above/below
+* make sure pager is displayed centered
+
+### Stage
+Main issue here will be styling of the Galleria
+ 
+
 ## Add Parallax effect
 * [jparallax](http://stephband.info/jparallax/)
 * [curtain](http://editsquarterly.com/)
