@@ -60,8 +60,15 @@ The styling done so far is very limited to nonexistant.
 * make sure pager is displayed centered
 
 ### Stage
-Main issue here will be styling of the Galleria
- 
+Main issue here will be styling of the Galleria. I've added a theme to 
+js/galleria/themes/portfolio where I added some basic styling. Note that the
+controls have a red background so you can properly see them. 
+* handle configuration of gallery in js/galleria/themes/portfolio/galleria.portfolio.js
+* handle styling of gallery in js/galleria/themes/portfolio/galleria.portfolio.css
+* note that you can use js/galleria/themes/portfolio/portfolio-demo.html while styling
+* to replace the control icons, either change portfolio-map.png (looks like a 
+sprite, keep controls in their respective place) or change using css 
+
 
 ## Add Parallax effect
 * [jparallax](http://stephband.info/jparallax/)

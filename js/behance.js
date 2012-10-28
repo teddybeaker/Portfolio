@@ -138,7 +138,7 @@ BEHANCEAPP.views.Stage = Backbone.View.extend({
 						images.push({
 							thumb: module.src, 
 							original: module.sizes.original,
-							caption: module.caption,
+							caption: module.caption || '',
 						});
 					}
 				});
