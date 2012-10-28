@@ -10,6 +10,43 @@ Portfolio page of xinteractionx
 [backbone.js](http://backbonejs.org)
 [underscorejs](http://underscorejs.org)
 
+# Behance Application
+Fetch and render projects from [Behance](http://www.behance.net/).
+KIM: if you want to add functionality to the app, you might want have a look
+at the [Backbone extension from Behance](https://github.com/behance/network_api_backbone).
+We decided against using it since we need to cache the json for projects anyway 
+(limited number of calls allowed by Behance) and load them from file. It is 
+therefore sufficient to use Backbone.
+
+## Update script
+PHP script that fetches all projects on behance and writes them to a file
+called _projects.json_.
+
+### During development
+You want to call this script everytime the projects change on Behance.
+
+If you serve the page through a web server (e.g. Apache), you can just point
+your browser to behanceUpdateScript.php.
+
+Otherwise, type on a shell (terminal on Mac) the command `php /path/to/behanceUpdateScript.php`.
+e.g. if your project is located in your home in a folder named _Portfolio_, you'd
+type `php ~/Portfolio/behanceUpdateScript.php
+
+### On live server
+Let a cronjob call this script on a regular basis. On Hostpoint, you'd install
+it as follows:
+1. upload your whole project (including behanceUpdateScript.php) to the server
+2. Log into the control panel
+3. Go to "Admin" > "Cronjobs Manager" and click on "Cronjob erstellen"
+4. To run it every 15 minutes, enter "*/15" for _m_ (minutes) and "*" for all 
+other time related fields; enter "php /pathToScript" for command, 
+e.g. "php ~/public_html/behanceUpdateScript.php" if the project is located directly in public_html
+5. Click "Erstellen"
+If everything works, the script will create and fill _projects.json_ when
+it is run the next time (which in above sample will be the next quarter of an hour).
+If anything goes wrong, the script will output an error message which will be 
+emailed to you.
+
 # TODOs
 
 ## Add Parallax effect
@@ -20,9 +57,6 @@ Portfolio page of xinteractionx
   * could interfere with css3-mediaqueries.js (did when I tried to adapt the sample to 1140)
   * [One Page Websites tagged with: Parallax Scrolling](http://onepagelove.com/tag/parallax-scrolling)
   * Found only one example that is responsive as well: http://www.duluthtrading.com/site/components/last-pants-standing -> consider disabling effect with media queries
-
-## Portfolio
-* add Behance update script
 
 ### Showcases
 [Martin Oberhäuser](http://www.oberhaeuser.info)
