@@ -156,14 +156,19 @@ p {
 	padding-bottom: 3.5rem;
 }
 
-.fixedwrapper{
-	position:	fixed;
+.fixedwrapper {
+	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	background-color: white; 
 	line-height: 27px;
-	}
+}
+
+/** make sure galleria doesn't scroll over */
+.fixedwrapper, .fixedfooter {
+	z-index: 3;
+}
 
 .fixedwrapper .container, .fixedfooter .container {
 	padding-top: 0;
