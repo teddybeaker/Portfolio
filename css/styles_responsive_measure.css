@@ -91,7 +91,7 @@
 	}
 
 	.topmargin.container {
-		padding-top: 1rem;
+		padding-top: 100px;
 	}
 
 	
@@ -117,7 +117,7 @@
 	footer {
 		padding-top: 15px;
 		font-family: bariol_regularregular;
-		font-size: 17px
+		font-size: 18px
 		}
 
 
@@ -125,8 +125,6 @@
 		font-family: bariol_boldbold;
 		text-transform: uppercase;
 		font-weight: normal;
-		font-size: 0.55rem;
-		line-height: 0.6rem;
 	}
 
 
@@ -134,26 +132,23 @@
 		font-family: bariol_regularregular;
 		text-transform: uppercase;
 		font-weight: normal;
-		font-size: 0.45rem;
-		line-height: 0.50rem;
+
 	}
 
 	h6 {
-		margin-top: 0.5rem;
+		margin-top: 25px;
 		font-family: bariol_regularregular;
 		font-weight: normal;
-		font-size: 0.35rem;
-		line-height: 0.42rem;
+
 	}	
 
 	p {
 		font-family: bariol_regularregular;
-		line-height: 1.2rem;
-}
+	}
 
 .container {
-		padding-top: 3.5rem;
-		padding-bottom: 3.5rem;
+		padding-top: 300px;
+		padding-bottom: 300px;
 }
 
 
@@ -210,7 +205,7 @@
 
 #home p, #who p {
 	color: white;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 } 
 
 .work {
@@ -220,17 +215,11 @@
 .work  div {
 	color: black;
 }
-
-.work p {
-	font-size: 0.5rem;
-	line-height: 0.6rem;	
-}
-
 .line {
 	display: block;
-	border-bottom: 2px solid black;
-	margin-top: 0.3rem;
-	margin-bottom: 0.3rem;
+	border-bottom: 3px solid black;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 
 .images {
@@ -267,16 +256,38 @@
 
 @media only screen and (max-width: 1140px) {
 
-	body {
-	}
 
 	.fixedwrapper{
 		position: fixed;
 	}
 
 	.topmargin{
-		padding-top: 1rem;
+		padding-top: 100px;
 	}
+}
+
+/* ========================================================== */
+/* ! Layout for smallisher version (Mainly Navigation)   */
+/* ========================================================== */
+
+@media only screen and (max-width: 1010px) {
+
+
+	.fixedwrapper{
+		position: fixed;
+	}
+
+	.topmargin{
+		padding-top: 100px;
+	}
+
+	nav li {
+	font-size: 71px;
+	line-height: 71px;
+	padding-left: auto;
+	display: inline-block;
+	}
+
 }
 
 
@@ -286,102 +297,13 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
-
-	h1 { 
-		font-family: bariol_boldbold;
-		text-transform: uppercase;
-		font-weight: normal;
-		font-size: 1rem;
-		line-height: 1.2rem;
-
+	body {
+		
 	}
 
 
-	h2 {
-		font-family: bariol_regularregular;
-		text-transform: uppercase;
-		font-weight: normal;
-		font-size: 0.9rem;
-		line-height: 1.1rem;
-	}
-
-	h6 {
-		margin-top: 0.65rem;
-		font-family: bariol_regularregular;
-		font-weight: normal;
-		font-size: 0.65rem;
-		line-height: 0.8rem;
-	}	
-
-	#work p {
-	font-size: 0.9rem;
-	line-height: 1.1rem;	
-	}
-
-	#work section div {
-		margin-top: 1rem;
-	}
-
-	.line {
-	display: block;
-	border-bottom: 2px solid black;
-	margin-top: 0.65rem;
-	margin-bottom: 0.65rem;
-}
 
 }
-
-
-@media handheld, only screen and (max-width: 703px) {
-
-
-
-	.logo {
-	padding-top: 8px;
-	font-size: 27px;
-	float: left;
-	letter-spacing: 0.05em;
-	}	
-
-	nav li {
-	padding-top: 37px;
-	padding-left: 22px;
-	font-size: 27px;
-	line-height: 27px;
-	display: inline-block;
-	}
-	
-	nav li:first-child  {
-		padding-left: none;
-	}
-
-}
-
-@media handheld, only screen and (max-width: 380px) {
-
-	nav li {
-	padding-top: 37px;
-	padding-left: 10px;
-	font-size: 27px;
-	line-height: 27px;
-	display: inline-block;
-	}
-
-}
-
-	@media handheld, only screen and (max-width: 360px) {
-
-	nav li {
-	padding-top: 37px;
-	padding-left: 10px;
-	font-size: 20px;
-	line-height: 27px;
-	display: inline-block;
-	}
-
-}
-
-
 
 
 /* ========================================== */
