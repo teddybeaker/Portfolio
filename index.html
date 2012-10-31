@@ -15,7 +15,9 @@
 	
 	<!-- Your styles -->
 	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/behance.css" type="text/css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/behance.css" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
@@ -109,32 +111,16 @@
 	<div id="work" class="container work">
 		<nav id="worknav" class="row">
 			<div class="twelvecol last">
-			    <a class="buttons prev" href="#">
-			    	<img src="images/lebutton.svg" alt="left" />
-			    </a>
-			    <div class="viewport">
-			    	<ul class="overview">
-			    		<li>loading</li>
-			    	</ul>
-					<script type="text/template" id="tplNavListItem">
-						<li data-id="<%=id %>">
-							<a href="#works/<%=id%>">
-								<img src="<%=cover%>" alt="<%=name%>"/>
-							</a>
-						</li>
-					</script>
-				</div>
-			    <a class="buttons next" href="#">
-			    	<img src="images/lebutton.svg" alt="right" />
-			    </a>
-		    	<ul class="pager">
+		    	<ul class="overview elastislide-list">
 		    		<li>loading</li>
 		    	</ul>
-				<script type="text/template" id="tplNavPagerItem">
-		        	<li>
-		        		<a rel="<%= index %>" class="pagenum" href="#"></a>
-		        	</li>
-		       </script>
+				<script type="text/template" id="tplNavListItem">
+					<li>
+						<a href="#works/<%=id%>">
+							<img src="<%=cover%>" alt="<%=name%>"/>
+						</a>
+					</li>
+				</script>
 			</div>
 		</nav>
 		<section id="stage" class="row">
@@ -186,10 +172,12 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="js/jquery.tinycarousel.min.js"></script>
+	<script src="js/modernizr.custom.17475.js"></script>
 	<script type="text/javascript" src="js/underscore.js"></script>
 	<script type="text/javascript" src="js/backbone.js"></script>
 	<script type="text/javascript" src="js/galleria/galleria-1.2.8.min.js"></script>
+	<script type="text/javascript" src="js/jquerypp.custom.js"></script>
+	<script type="text/javascript" src="js/jquery.elastislide.js"></script>
 	<!-- important that included after all the markup, otherwise views won't work -->
 	<script type="text/javascript" src="js/behance.js"></script>
 	<script type="text/javascript">

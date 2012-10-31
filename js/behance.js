@@ -15,13 +15,8 @@ var BEHANCEAPP = {
 
 	
 /** ===========================================================================
- * Responsible for displaying navigation. Consists of
- * - list/carousel with thumbnail images
- * - previous/next buttons
- * - pager
- * 
- * uses tinycarousel.
- * KIM that tinycarousel starts element count at 0 but page count at 1
+ * Responsible for displaying navigation.
+ * uses elastislide.
  * ===========================================================================*/
 BEHANCEAPP.views.Navigation = Backbone.View.extend({
 
@@ -30,71 +25,42 @@ BEHANCEAPP.views.Navigation = Backbone.View.extend({
 	currentPage: 1,
 	templates: {
 		listItem:_.template($('#tplNavListItem').html()),
-		pagerItem: _.template($('#tplNavPagerItem').html()),
 		
 	},
 	lookup: {},
-	
-	initialize: function () {
-		_.bindAll(this, 'handleCarouselChanges');
-	},
 	
 	/**
 	 * populate navigation from projects, populate lookup table
 	 */
 	render: function (projects) {
 		var self=this, i=0,
-			list = $('.overview'),
-			pager = $('.pager'),
+			carousel = $('.overview'),
 			nofPages = Math.floor(projects.length/this.elementsVisible);
 		
 		//remove any content present
-		list.empty();
-		pager.empty();
+		carousel.empty();
 		
-		//populate list/carousel
+		//populate carousel
 		projects.each(function (project) {
 			var data = project.attributes,
 				resolutions  = _.keys(data.covers);
 			//select image with best resolution available
 			data.cover = data.covers[_.max(resolutions)];
 			self.lookup[data.id] = i++;
-			list.append(self.templates.listItem(data));
+			carousel.append(self.templates.listItem(data));
 		});
 		
-		//render pager items; KIM that (page-)ids have to start at 0 here
-		for (j=0; j<=nofPages; j++) {
-			pager.append(self.templates.pagerItem({index: j}));
-			
-		}
-		//start tinycarousel
-		this.$el.tinycarousel({
-			display: self.elementsVisible, // move elementsVisible blocks at a time
-			controls: true, // show left and right navigation button
-			pager: true, // display pager
-			callback: self.handleCarouselChanges
-		});
+		//start carousel
+		carousel.elastislide();
 	},
 	
 	/**
 	 *  mark entry with id as current
 	 */
 	setActive: function (id) {
-		var newPage = Math.floor(this.lookup[id] / this.elementsVisible) + 1;
-		this.$el.find('.overview li').removeClass('selected');
-		this.$el.find(".overview [data-id='" + id + "']").addClass('selected');
-		if (newPage != this.currentPage) {
-			this.$el.tinycarousel_move(newPage);
-			this.currentPage = newPage;
-		}
-	},
-	
-	handleCarouselChanges: function (element, index) {
-		/* KIM: element is always the element at position index, but index 
-		 * behaves differently for elementsVisible != 1: index corresponds then
-		 * to page-1 */
-		this.currentPage = index+1;
+		console.debug("TODO handle setActive");
 	}
+	
 });
 
 
