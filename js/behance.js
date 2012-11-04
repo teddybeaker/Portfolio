@@ -20,25 +20,20 @@ var BEHANCEAPP = {
  * ===========================================================================*/
 BEHANCEAPP.views.Navigation = Backbone.View.extend({
 
-	el: $('nav'),
+	el: $('.elastislide-list'),
+	carousel: null, //elastislide object
 	elementsVisible: 4,
-	currentPage: 1,
-	templates: {
-		listItem:_.template($('#tplNavListItem').html()),
-		
-	},
+	template: _.template($('#tplNavListItem').html()),
 	lookup: {},
 	
 	/**
 	 * populate navigation from projects, populate lookup table
 	 */
 	render: function (projects) {
-		var self=this, i=0,
-			carousel = $('.overview'),
-			nofPages = Math.floor(projects.length/this.elementsVisible);
+		var self=this, i=0;
 		
 		//remove any content present
-		carousel.empty();
+		this.$el.empty();
 		
 		//populate carousel
 		projects.each(function (project) {
@@ -47,18 +42,20 @@ BEHANCEAPP.views.Navigation = Backbone.View.extend({
 			//select image with best resolution available
 			data.cover = data.covers[_.max(resolutions)];
 			self.lookup[data.id] = i++;
-			carousel.append(self.templates.listItem(data));
+			self.$el.append(self.template(data));
 		});
 		
 		//start carousel
-		carousel.elastislide();
+		this.carousel = this.$el.elastislide({
+			minItems: this.elementsVisible,
+		});
 	},
 	
 	/**
 	 *  mark entry with id as current
 	 */
 	setActive: function (id) {
-		console.debug("TODO handle setActive");
+		this.carousel.setCurrent(this.lookup[id]);
 	}
 	
 });
